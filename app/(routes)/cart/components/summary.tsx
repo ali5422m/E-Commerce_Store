@@ -8,6 +8,7 @@ import useCart from "@/hooks/use-cart";
 import {totalmem} from "os";
 import {useEffect} from "react";
 import toast from "react-hot-toast";
+import cartItem from "@/app/(routes)/cart/components/cart-item";
 const Summary = () => {
     const searchParams = useSearchParams();
     const items = useCart((state) => state.items);
@@ -49,7 +50,7 @@ const Summary = () => {
                     <Currency value={totalPrice} />
                 </div>
             </div>
-            <Button onClick={onCheckout} className="w-full mt-6">
+            <Button disabled={items.length === 0} onClick={onCheckout} className="w-full mt-6">
                 Checkout
             </Button>
         </div>

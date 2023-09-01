@@ -4,9 +4,19 @@ import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
 import CartItem from "@/app/(routes)/cart/components/cart-item";
 import Summary from "@/app/(routes)/cart/components/summary";
+import {useEffect, useState} from "react";
 
 const Page = () => {
+    const [isMounted, setIsMounted] = useState(false);
     const cart = useCart();
+
+    useEffect(() => {
+        setIsMounted(true);
+    },[]);
+
+    if (!isMounted) {
+        return null;
+    }
 
 
     return (

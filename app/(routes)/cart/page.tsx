@@ -20,7 +20,7 @@ const Page = () => {
 
 
     return (
-        <div className="bg-white">
+        <div className="bg-white min-h-screen">
             <Container>
                 <div className="px-4 py-16 sm:px-6 lg:px-8">
                     <h1 className="text-3xl font-bold text-black">
